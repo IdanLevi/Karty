@@ -6,6 +6,14 @@
              BackgroundColor="Teal"
              x:Class="Karty.Views.MyKartsPage">
     <StackLayout Margin="50">
-        
+        <Label Text="My Karts"
+               VerticalOptions="StartAndExpand"
+               HorizontalOptions="Center"
+               FontSize="Large"/>
+        <Button Text="ADD"
+                WidthRequest="200"
+                HeightRequest="50"
+                Command="{Binding AddKartCommand}"
+                VerticalOptions="EndAndExpand"/>
     </StackLayout>
 </ContentPage>
