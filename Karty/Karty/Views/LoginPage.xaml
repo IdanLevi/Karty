@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             mvvm:ViewModelLocator.AutowireViewModel="True"
+             BackgroundColor="Teal"
+             x:Class="Karty.Views.LoginPage">
+    <StackLayout Margin="50">
+        <Label Text="Login"
+               VerticalOptions="StartAndExpand"
+               HorizontalOptions="Center"
+               FontSize="Large"/>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Entry Placeholder="Email"
+               Text="{Binding User.Email}"/>
+            <Entry Placeholder="Password"
+               Text="{Binding User.Password}"
+               IsPassword="True"/>
+        </StackLayout>
+        <Button Text="Login"
+                WidthRequest="200"
+                HeightRequest="50"
+                Command="{Binding LoginCommand}"
+                VerticalOptions="EndAndExpand"/>
+    </StackLayout>
+</ContentPage>
