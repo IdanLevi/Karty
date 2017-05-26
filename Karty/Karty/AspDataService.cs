@@ -37,9 +37,11 @@ namespace Karty
             return _Karts;
         }
 
-        public void CreateKart(KartDTO kart)
+        public KartDetailsDTO CreateKart(KartDetailsDTO kart)
         {
-            _Karts.Add(kart);
+            _Karts.Add(new KartDTO() { Name = kart.Name });
+
+            return kart;
         }
     }
 }

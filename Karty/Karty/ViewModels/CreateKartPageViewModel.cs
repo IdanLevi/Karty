@@ -15,19 +15,19 @@ namespace Karty.ViewModels
     {
         private readonly INavigationService _navigationService;
         public Command AddKartCommand { get; set; }
-        public KartDTO Kart { get; set; }
+        public KartDetailsDTO Kart { get; set; }
 
         public CreateKartPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
             AddKartCommand = new Command(() => this.navigateApp());
-            Kart = new KartDTO();
+            Kart = new KartDetailsDTO();
         }
 
         private async void navigateApp()
         {
             AspDataService.Instance.CreateKart(Kart);
-            Kart = new KartDTO();
+            Kart = new KartDetailsDTO();
             await _navigationService.NavigateAsync("MyKartsPage");
         }
     }

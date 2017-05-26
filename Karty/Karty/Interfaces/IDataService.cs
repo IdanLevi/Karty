@@ -11,6 +11,6 @@ namespace Karty.Interfaces
     public interface IDataService
     {
         List<KartDTO> GetMyKarts(String userId);
-        void CreateKart(KartDTO kart);
+        KartDetailsDTO CreateKart(KartDetailsDTO kart);
     }
 }
