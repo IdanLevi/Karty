@@ -42,5 +42,12 @@ namespace Karty
 
             return kart;
         }
+
+        public KartDetailsDTO GetKart(String kartId)
+        {
+            KartDTO kart = _Karts.Find(item => item.Name == kartId);
+
+            return new KartDetailsDTO() { Name = kart.Name };
+        }
     }
 }

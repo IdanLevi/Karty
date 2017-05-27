@@ -11,5 +11,6 @@ namespace Karty.Interfaces
     {
         List<KartDTO> GetMyKarts(String userId);
         KartDetailsDTO CreateKart(KartDetailsDTO kart);
+        KartDetailsDTO GetKart(String kartId);
     }
 }
