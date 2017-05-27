@@ -1,4 +1,5 @@
-﻿using Karty.Interfaces;
+﻿using System.Collections.Generic;
+using Karty.Interfaces;
 using Microsoft.WindowsAzure.MobileServices;
 using Newtonsoft.Json;
 
@@ -15,5 +16,7 @@ namespace Karty.Models
 
         [Version]
         public string Version { get; set; }
+
+        public List<User> Members { get; set; }
     }
 }

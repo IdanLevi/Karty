@@ -19,7 +19,6 @@ namespace Karty.ViewModels
 
         public CreateKartPageViewModel(INavigationService navigationService): base(navigationService)
         {
-            _navigationService = navigationService;
             AddKartCommand = new Command(() => this.createKart());
             Kart = new Kart();
             AddMemberCommand = new Command(() => this.addMember());

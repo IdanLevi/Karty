@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Karty.Models;

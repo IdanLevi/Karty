@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Karty.ViewModels
 {
-    class BaseViewModel : BindableBase
+    public class BaseViewModel : BindableBase
     {
         protected readonly INavigationService _navigationService;
 
