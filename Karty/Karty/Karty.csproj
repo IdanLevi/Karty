@@ -38,14 +38,7 @@
     <Compile Include="App.cs" />
     <Compile Include="AppManager.cs" />
     <Compile Include="AspDataService.cs" />
-    <Compile Include="DTOs\BaseDTO.cs" />
-    <Compile Include="DTOs\itemDTO.cs" />
-    <Compile Include="DTOs\KartDetailsDTO.cs" />
-    <Compile Include="DTOs\KartDTO.cs" />
-    <Compile Include="DTOs\UserDTO.cs" />
     <Compile Include="Interfaces\IDataService.cs" />
-    <Compile Include="Models\Kart.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\CreateKartPageViewModel.cs" />
     <Compile Include="ViewModels\MyKartsPageViewModel.cs" />
