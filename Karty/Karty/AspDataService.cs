@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Karty.Models;
-using Karty.DTOs;
+using KartyModel;
 
 namespace Karty
 {

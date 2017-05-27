@@ -1,5 +1,4 @@
-﻿using Karty.Models;
-using Karty.DTOs;
+﻿using KartyModel;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
