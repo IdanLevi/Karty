@@ -10,11 +10,15 @@
                VerticalOptions="StartAndExpand"
                HorizontalOptions="Center"
                FontSize="Large"/>
-        <ListView ItemsSource="{Binding Karts}" SelectedItem="{Binding SelectedKart, Mode=TwoWay}"
-              BackgroundColor="White" Margin="12" SeparatorVisibility="Default" >
+        <ListView
+            ItemsSource="{Binding Karts}"
+            SelectedItem="{Binding SelectedKart, Mode=TwoWay}"
+            BackgroundColor="White"
+            Margin="12"
+            SeparatorVisibility="Default" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}"/>
+                    <TextCell Text="{Binding Name}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

@@ -12,11 +12,11 @@
                FontSize="Large"/>
         <Entry Placeholder="Kart name"
                Text="{Binding Kart.Name}"/>
-        <StackLayout VerticalOptions="Center" Margin="20, 0, 0, 0">
+        <StackLayout Margin="0, 30, 0, 0">
             <Label Text="Members:"
                VerticalOptions="StartAndExpand"
-               HorizontalOptions="Center"
-               FontSize="Large"/>
+               HorizontalOptions="Start"
+               FontSize="Medium"/>
             <Entry Placeholder="User email to invite"
                Text="{Binding UserEmail}"/>
             <Button Text="Add Member"

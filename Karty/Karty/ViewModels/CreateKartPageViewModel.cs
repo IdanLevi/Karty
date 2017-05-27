@@ -10,20 +10,19 @@ using Xamarin.Forms;
 
 namespace Karty.ViewModels
 {
-    class CreateKartPageViewModel : BindableBase
+    class CreateKartPageViewModel : BaseViewModel
     {
-        private readonly INavigationService _navigationService;
         public Command AddKartCommand { get; set; }
         public Command AddMemberCommand { get; set; }
         public KartDetailsDTO Kart { get; set; }
         public String UserEmail { get; set; }
 
-        public CreateKartPageViewModel(INavigationService navigationService)
+        public CreateKartPageViewModel(INavigationService navigationService): base(navigationService)
         {
-            _navigationService = navigationService;
             AddKartCommand = new Command(() => this.createKart());
             AddMemberCommand = new Command(() => this.addMember());
             Kart = new KartDetailsDTO();
+            Kart.Members = new List<UserDTO>();
         }
 
         private async void createKart()
@@ -33,7 +32,7 @@ namespace Karty.ViewModels
             this.navigateKartsPage();
         }
 
-        private async void addMember()
+        private void addMember()
         {
             Kart.Members.Add(new UserDTO() { Email = UserEmail });
         }
