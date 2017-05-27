@@ -175,19 +175,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Startup.MobileApp.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\KartController.cs" />
-    <Compile Include="Controllers\TodoItemController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DataObjects\Item.cs" />
     <Compile Include="DataObjects\Kart.cs" />
-    <Compile Include="DataObjects\KartMembership.cs" />
-    <Compile Include="DataObjects\TodoItem.cs" />
     <Compile Include="DataObjects\User.cs" />
-    <Compile Include="DTOs\BaseDTO.cs" />
-    <Compile Include="DTOs\ItemDTO.cs" />
-    <Compile Include="DTOs\KartDetailsDTO.cs" />
-    <Compile Include="DTOs\KartDTO.cs" />
-    <Compile Include="DTOs\UserDTO.cs" />
     <Compile Include="Models\KartyContext.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

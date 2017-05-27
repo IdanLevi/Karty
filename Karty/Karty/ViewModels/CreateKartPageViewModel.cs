@@ -1,4 +1,4 @@
-﻿using KartyModel;
+﻿using Karty.Models;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -14,19 +14,19 @@ namespace Karty.ViewModels
     {
         private readonly INavigationService _navigationService;
         public Command AddKartCommand { get; set; }
-        public KartDetailsDTO Kart { get; set; }
+        public Kart Kart { get; set; }
 
         public CreateKartPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
             AddKartCommand = new Command(() => this.navigateApp());
-            Kart = new KartDetailsDTO();
+            Kart = new Kart();
         }
 
         private async void navigateApp()
         {
             AspDataService.Instance.CreateKart(Kart);
-            Kart = new KartDetailsDTO();
+            Kart = new Kart();
             await _navigationService.NavigateAsync("MyKartsPage");
         }
     }

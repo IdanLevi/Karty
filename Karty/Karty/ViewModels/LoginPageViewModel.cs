@@ -2,14 +2,14 @@
 using Xamarin.Forms;
 using Prism.Mvvm;
 using Prism.Navigation;
-using KartyModel;
+using Karty.Models;
 
 namespace Karty.ViewModels
 {
     public class LoginPageViewModel : BindableBase
     {
         private readonly INavigationService _navigationService;
-        public UserDTO UserLoginDetails { get; set; }
+        public User UserLoginDetails { get; set; }
         public Command LoginCommand { get; set; }
 
         public LoginPageViewModel(INavigationService navigationService)

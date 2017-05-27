@@ -7,10 +7,7 @@ using System.Threading.Tasks;
 
 namespace Karty.Interfaces
 {
-    public interface IDataService
+    public interface IItemManager : IEntityManager<Item>
     {
-        List<Kart> GetMyKarts(String userId);
-
-        Kart CreateKart(Kart kart);
     }
 }

@@ -1,4 +1,4 @@
-﻿using KartyModel;
+﻿using Karty.Models;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -14,8 +14,8 @@ namespace Karty.ViewModels
     {
         private readonly INavigationService _navigationService;
         public Command AddKartCommand { get; set; }
-        public List<KartDTO> Karts { get; set; }
-        public KartDTO SelectedKart { get; set; }
+        public List<Kart> Karts { get; set; }
+        public Kart SelectedKart { get; set; }
 
         public MyKartsPageViewModel(INavigationService navigationService)
         {
