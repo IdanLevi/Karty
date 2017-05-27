@@ -10,7 +10,9 @@ namespace Karty.Interfaces
     public interface IDataService
     {
         List<Kart> GetMyKarts(String userId);
-
+		
+        Kart GetKart(String kartId);
+		
         Kart CreateKart(Kart kart);
     }
 }

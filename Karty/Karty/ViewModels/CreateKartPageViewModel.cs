@@ -10,23 +10,36 @@ using Xamarin.Forms;
 
 namespace Karty.ViewModels
 {
-    class CreateKartPageViewModel : BindableBase
+    public class CreateKartPageViewModel : BaseViewModel
     {
-        private readonly INavigationService _navigationService;
         public Command AddKartCommand { get; set; }
         public Kart Kart { get; set; }
+        public Command AddMemberCommand { get; set; }
+        public String UserEmail { get; set; }
 
-        public CreateKartPageViewModel(INavigationService navigationService)
+        public CreateKartPageViewModel(INavigationService navigationService): base(navigationService)
         {
             _navigationService = navigationService;
-            AddKartCommand = new Command(() => this.navigateApp());
+            AddKartCommand = new Command(() => this.createKart());
             Kart = new Kart();
+            AddMemberCommand = new Command(() => this.addMember());
+            Kart.Members = new List<User>();
         }
 
-        private async void navigateApp()
+        private async void createKart()
         {
             AspDataService.Instance.CreateKart(Kart);
             Kart = new Kart();
+            this.navigateKartsPage();
+        }
+
+        private void addMember()
+        {
+            Kart.Members.Add(new User() { Email = UserEmail });
+        }
+
+        private async void navigateKartsPage()
+        {
             await _navigationService.NavigateAsync("MyKartsPage");
         }
     }

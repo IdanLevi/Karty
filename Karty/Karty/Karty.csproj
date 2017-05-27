@@ -51,11 +51,16 @@
     <Compile Include="Services\EntityManager.cs" />
     <Compile Include="Services\ItemService.cs" />
     <Compile Include="Services\KartManager.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\KartDetailsPageViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\CreateKartPageViewModel.cs" />
     <Compile Include="ViewModels\MyKartsPageViewModel.cs" />
     <Compile Include="Views\CreateKartPage.xaml.cs">
       <DependentUpon>CreateKartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KartDetailsPage.xaml.cs">
+      <DependentUpon>KartDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -133,6 +138,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\CreateKartPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\KartDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

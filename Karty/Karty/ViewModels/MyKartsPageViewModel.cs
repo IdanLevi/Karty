@@ -10,18 +10,39 @@ using Xamarin.Forms;
 
 namespace Karty.ViewModels
 {
-    class MyKartsPageViewModel : BindableBase
+    public class MyKartsPageViewModel : BaseViewModel
     {
-        private readonly INavigationService _navigationService;
         public Command AddKartCommand { get; set; }
         public List<Kart> Karts { get; set; }
-        public Kart SelectedKart { get; set; }
+        public Command SelectedCommand { get; set; }
 
-        public MyKartsPageViewModel(INavigationService navigationService)
+        private Kart _selectedKart;
+
+        public Kart SelectedKart
         {
-            _navigationService = navigationService;
+            get { return _selectedKart; }
+            set
+            {
+                SetProperty(ref _selectedKart, value);
+                if (SelectedKart != null)
+                {
+                    var param = new NavigationParameters { { "kart", SelectedKart } };
+                    _navigationService.NavigateAsync("KartDetailsPage", param);
+                }
+            }
+        }
+
+        public MyKartsPageViewModel(INavigationService navigationService) : base(navigationService)
+        {
             AddKartCommand = new Command(() => this.navigateApp());
+            SelectedCommand = new Command(() => this.selectedItemClickedExecute());
             Karts = AspDataService.Instance.GetMyKarts("11");
+        }
+
+        private async void selectedItemClickedExecute()
+        {
+            await _navigationService.NavigateAsync("CreateKartPage");
+
         }
 
         private async void navigateApp()

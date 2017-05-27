@@ -6,15 +6,14 @@ using Karty.Models;
 
 namespace Karty.ViewModels
 {
-    public class LoginPageViewModel : BindableBase
+    public class LoginPageViewModel : BaseViewModel
     {
-        private readonly INavigationService _navigationService;
         public User UserLoginDetails { get; set; }
+
         public Command LoginCommand { get; set; }
 
-        public LoginPageViewModel(INavigationService navigationService)
+        public LoginPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            _navigationService = navigationService;
             LoginCommand = new Command(() => this.navigateApp());
         }
 
