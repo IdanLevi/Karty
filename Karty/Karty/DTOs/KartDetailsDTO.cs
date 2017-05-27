@@ -6,8 +6,8 @@ namespace Karty.DTOs
     {
         public string Name { get; set; }
 
-        public List<ItemDTO> Items { get; set; }
+        public List<ItemDTO> Items { get; set; } = new List<ItemDTO>();
 
-        public List<UserDTO> Members { get; set; }
+        public List<UserDTO> Members { get; set; } = new List<UserDTO>();
     }
 }
