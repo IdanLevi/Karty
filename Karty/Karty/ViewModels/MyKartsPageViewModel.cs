@@ -26,7 +26,7 @@ namespace Karty.ViewModels
                 SetProperty(ref _selectedKart, value);
                 if (SelectedKart != null)
                 {
-                    var param = new NavigationParameters { { "kart", SelectedKart } };
+                    var param = new NavigationParameters { { "kartId", SelectedKart.Id } };
                     _navigationService.NavigateAsync("KartDetailsPage", param);
                 }
             }

@@ -52,10 +52,15 @@
     <Compile Include="Services\ItemService.cs" />
     <Compile Include="Services\KartManager.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\AddKartItemPageViewModel.cs" />
+    <Compile Include="ViewModels\ShowMembersPageViewModel.cs" />
     <Compile Include="ViewModels\KartDetailsPageViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\CreateKartPageViewModel.cs" />
     <Compile Include="ViewModels\MyKartsPageViewModel.cs" />
+    <Compile Include="Views\AddKartItemPage.xaml.cs">
+      <DependentUpon>AddKartItemPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CreateKartPage.xaml.cs">
       <DependentUpon>CreateKartPage.xaml</DependentUpon>
     </Compile>
@@ -71,6 +76,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\MyKartsPage.xaml.cs">
       <DependentUpon>MyKartsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowMembersPage.xaml.cs">
+      <DependentUpon>ShowMembersPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +152,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\KartDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\AddKartItemPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ShowMembersPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

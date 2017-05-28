@@ -31,6 +31,8 @@ namespace Karty
             Container.RegisterTypeForNavigation<MyKartsPage>("MyKartsPage");
             Container.RegisterTypeForNavigation<CreateKartPage>("CreateKartPage");
             Container.RegisterTypeForNavigation<KartDetailsPage>("KartDetailsPage");
+            Container.RegisterTypeForNavigation<AddKartItemPage>("AddKartItemPage");
+            Container.RegisterTypeForNavigation<ShowMembersPage>("ShowMembersPage");
         }
 
         public static IMobileServiceClient Client { get; private set; }

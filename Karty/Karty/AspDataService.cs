@@ -19,11 +19,16 @@ namespace Karty
 
         private AspDataService()
         {
-            _Karts.Add(new Kart() { Name = "Kart 1" });
-            _Karts.Add(new Kart() { Name = "Kart 2" });
-            _Karts.Add(new Kart() { Name = "Kart 3" });
-            _Karts.Add(new Kart() { Name = "Kart 4" });
-            _Karts.Add(new Kart() { Name = "Kart 5" });
+            _Karts.Add(new Kart() { Name = "Kart 1", Id = "Kart 1" });
+            _Karts.Add(new Kart() { Name = "Kart 2", Id = "Kart 2" });
+            _Karts.Add(new Kart() { Name = "Kart 3", Id = "Kart 3" });
+            _Karts.Add(new Kart() { Name = "Kart 4", Id = "Kart 4" });
+            _Karts.Add(new Kart() { Name = "Kart 5", Id = "Kart 5" });
+        }
+
+        public List<User> GetKartMembers(String kartId)
+        {
+            return new List<User>();
         }
 
         public static AspDataService Instance
@@ -38,7 +43,7 @@ namespace Karty
 
         public Kart CreateKart(Kart kart)
         {
-            _Karts.Add(new Kart() { Name = kart.Name });
+            _Karts.Add(new Kart() { Name = kart.Name, Id = kart.Id });
 
             return kart;
         }
@@ -46,8 +51,20 @@ namespace Karty
         public Kart GetKart(String kartId)
         {
             Kart kart = _Karts.Find(item => item.Name == kartId);
+            List<Item> items = new List<Item>()
+            {
+                new Item(){Name="Item 1", Quantity=2},
+                new Item(){Name="Item 2", Quantity=5},
+                new Item(){Name="Item 3", Quantity=1},
+            };
 
-            return new Kart() { Name = kart.Name };
+            return new Kart() { Name = kart.Name, Items = items, Id = kart.Name };
+        }
+
+        public Item CreateItem(Item item)
+        {
+            // need to add item to kart
+            return item;
         }
     }
 }
