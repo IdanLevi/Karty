@@ -18,5 +18,6 @@ namespace Karty.Models
         public string Version { get; set; }
 
         public List<User> Members { get; set; }
+        public List<Item> Items { get; set; }
     }
 }

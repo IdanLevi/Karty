@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             mvvm:ViewModelLocator.AutowireViewModel="True"
+             BackgroundColor="Teal"
+             x:Class="Karty.Views.AddKartItemPage">
+    <StackLayout Margin="50">
+        <Label Text="Add item"
+               VerticalOptions="StartAndExpand"
+               HorizontalOptions="Center"
+               FontSize="Large"/>
+        <Entry Placeholder="Item Name"
+               Text="{Binding Item.Name}"/>
+        <Entry Placeholder="Quantity"
+               Text="{Binding Item.Quantity}"/>
+        <Button Text="ADD"
+                WidthRequest="200"
+                HeightRequest="50"
+                Command="{Binding AddItemCommand}"
+                VerticalOptions="EndAndExpand"/>
+    </StackLayout>
+</ContentPage>

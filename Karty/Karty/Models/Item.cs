@@ -16,5 +16,8 @@ namespace Karty.Models
 
         [JsonProperty(PropertyName = "kartId")]
         public string KartId { get; set; }
+
+        [JsonProperty(PropertyName = "quantity")]
+        public int Quantity { get; set; }
     }
 }
