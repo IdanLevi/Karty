@@ -1,4 +1,4 @@
-﻿using KartyModel;
+﻿using Karty.Models;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -10,15 +10,15 @@ using Xamarin.Forms;
 
 namespace Karty.ViewModels
 {
-    class MyKartsPageViewModel : BaseViewModel
+    public class MyKartsPageViewModel : BaseViewModel
     {
         public Command AddKartCommand { get; set; }
+        public List<Kart> Karts { get; set; }
         public Command SelectedCommand { get; set; }
-        public List<KartDTO> Karts { get; set; }
 
-        private KartDTO _selectedKart;
+        private Kart _selectedKart;
 
-        public KartDTO SelectedKart
+        public Kart SelectedKart
         {
             get { return _selectedKart; }
             set

@@ -1,4 +1,4 @@
-﻿using KartyModel;
+﻿using Karty.Models;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -10,31 +10,31 @@ using Xamarin.Forms;
 
 namespace Karty.ViewModels
 {
-    class CreateKartPageViewModel : BaseViewModel
+    public class CreateKartPageViewModel : BaseViewModel
     {
         public Command AddKartCommand { get; set; }
+        public Kart Kart { get; set; }
         public Command AddMemberCommand { get; set; }
-        public KartDetailsDTO Kart { get; set; }
         public String UserEmail { get; set; }
 
         public CreateKartPageViewModel(INavigationService navigationService): base(navigationService)
         {
             AddKartCommand = new Command(() => this.createKart());
+            Kart = new Kart();
             AddMemberCommand = new Command(() => this.addMember());
-            Kart = new KartDetailsDTO();
-            Kart.Members = new List<UserDTO>();
+            Kart.Members = new List<User>();
         }
 
         private async void createKart()
         {
             AspDataService.Instance.CreateKart(Kart);
-            Kart = new KartDetailsDTO();
+            Kart = new Kart();
             this.navigateKartsPage();
         }
 
         private void addMember()
         {
-            Kart.Members.Add(new UserDTO() { Email = UserEmail });
+            Kart.Members.Add(new User() { Email = UserEmail });
         }
 
         private async void navigateKartsPage()

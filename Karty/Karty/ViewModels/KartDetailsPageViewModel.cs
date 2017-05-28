@@ -1,18 +1,12 @@
-﻿using KartyModel;
-using Prism.Mvvm;
+﻿using Karty.Models;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Karty.ViewModels
 {
-    class KartDetailsPageViewModel : BaseViewModel, INavigationAware
+    public class KartDetailsPageViewModel : BaseViewModel, INavigationAware
     {
-        private KartDetailsDTO _kart;
-        public KartDetailsDTO Kart
+        private Kart _kart;
+        public Kart Kart
         {
             get { return this._kart; }
             set
@@ -24,7 +18,7 @@ namespace Karty.ViewModels
 
         public KartDetailsPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            Kart = new KartDetailsDTO() { Name = "Some name" };
+            Kart = new Kart() { Name = "Some name" };
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -37,7 +31,7 @@ namespace Karty.ViewModels
 
         public void OnNavigatingTo(NavigationParameters parameters)
         {
-            KartDTO kart = (KartDTO)parameters["kart"];
+            Kart kart = (Kart)parameters["kart"];
 
             //Kart = AspDataService.Instance.GetKart(kart.Name);
             Kart.Name = kart.Name;

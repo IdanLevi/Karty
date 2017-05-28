@@ -39,6 +39,18 @@
     <Compile Include="AppManager.cs" />
     <Compile Include="AspDataService.cs" />
     <Compile Include="Interfaces\IDataService.cs" />
+    <Compile Include="Interfaces\IEntity.cs" />
+    <Compile Include="Interfaces\IEntityManager.cs" />
+    <Compile Include="Interfaces\IItemManager.cs" />
+    <Compile Include="Interfaces\IKartManager.cs" />
+    <Compile Include="Interfaces\IMessageManager.cs" />
+    <Compile Include="Interfaces\IMobileServicePlatform.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\Kart.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Services\EntityManager.cs" />
+    <Compile Include="Services\ItemService.cs" />
+    <Compile Include="Services\KartManager.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\KartDetailsPageViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
@@ -129,12 +141,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\KartyModel\KartyModel.csproj">
-      <Project>{67f9d3a8-f71e-4428-913f-c37ae82cdb24}</Project>
-      <Name>KartyModel</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\KartDetailsPage.xaml">

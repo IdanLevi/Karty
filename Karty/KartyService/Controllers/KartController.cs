@@ -7,7 +7,7 @@ using Microsoft.Azure.Mobile.Server;
 using KartyService.DataObjects;
 using KartyService.Models;
 
-namespace KartyService.Controllers
+namespace OsloAppService.Controllers
 {
     public class KartController : TableController<Kart>
     {
@@ -15,36 +15,36 @@ namespace KartyService.Controllers
         {
             base.Initialize(controllerContext);
             KartyContext context = new KartyContext();
-            DomainManager = new EntityDomainManager<Kart>(context, Request);
+            DomainManager = new EntityDomainManager<Kart>(context, Request, true);
         }
 
-        // GET tables/TodoItem
-        public IQueryable<Kart> GetAllTodoItems()
+        // GET tables/Kart
+        public IQueryable<Kart> GetAllKarts()
         {
             return Query();
         }
 
-        // GET tables/TodoItem/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        public SingleResult<Kart> GetTodoItem(string id)
+        // GET tables/Kart/48D68C86-6EA6-4C25-AA33-223FC9A27959
+        public SingleResult<Kart> GetKart(string id)
         {
             return Lookup(id);
         }
 
-        // PATCH tables/TodoItem/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        public Task<Kart> PatchTodoItem(string id, Delta<Kart> patch)
+        // PATCH tables/Kart/48D68C86-6EA6-4C25-AA33-223FC9A27959
+        public Task<Kart> PatchKart(string id, Delta<Kart> patch)
         {
             return UpdateAsync(id, patch);
         }
 
-        // POST tables/TodoItem
-        public async Task<IHttpActionResult> PostTodoItem(Kart item)
+        // POST tables/Kart
+        public async Task<IHttpActionResult> PostKart(Kart kart)
         {
-            Kart current = await InsertAsync(item);
+            Kart current = await InsertAsync(kart);
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
 
-        // DELETE tables/TodoItem/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        public Task DeleteTodoItem(string id)
+        // DELETE tables/Kart/48D68C86-6EA6-4C25-AA33-223FC9A27959
+        public Task DeleteKart(string id)
         {
             return DeleteAsync(id);
         }

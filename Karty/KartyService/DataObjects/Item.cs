@@ -10,6 +10,8 @@ namespace KartyService.DataObjects
     {
         public string Name { get; set; }
 
+        public string KartId { get; set; }
+
         public string OwnerId { get; set; }
     }
 }
