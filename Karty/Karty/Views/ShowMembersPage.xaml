@@ -6,13 +6,12 @@
              BackgroundColor="Teal"
              x:Class="Karty.Views.ShowMembersPage">
     <StackLayout Margin="50">
-        <Label Text="My Karts"
+        <Label Text="Kart Members"
                VerticalOptions="StartAndExpand"
                HorizontalOptions="Center"
                FontSize="Large"/>
         <ListView
-            ItemsSource="{Binding Karts}"
-            SelectedItem="{Binding SelectedKart, Mode=TwoWay}"
+            ItemsSource="{Binding Members}"
             BackgroundColor="White"
             Margin="12"
             SeparatorVisibility="Default" >
@@ -22,10 +21,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="ADD Kart"
-                WidthRequest="200"
-                HeightRequest="50"
-                Command="{Binding AddKartCommand}"
-                VerticalOptions="EndAndExpand"/>
     </StackLayout>
 </ContentPage>
